@@ -9,9 +9,9 @@ class intervalsappMenuDelegate extends WatchUi.MenuInputDelegate {
 
     function onMenuItem(item) {
         if (item == :item_1) {
-            System.println("item 1");
+            System.println(:item_1.toString());
         } else if (item == :item_2) {
-            System.println("item 2");
+            System.println(:item_2.toString());
         }
     }
 
