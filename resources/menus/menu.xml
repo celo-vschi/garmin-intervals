@@ -1,4 +1,4 @@
 <menu id="SelectPresetMenu">
-    <menu-item id="lats" label="@Strings.lats" />
-    <menu-item id="abs" label="@Strings.abs" />
+    <menu-item id="preset_1" label="@Strings.lats" />
+    <menu-item id="preset_2" label="@Strings.abs" />
 </menu>

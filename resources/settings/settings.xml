@@ -1,10 +1,18 @@
 <settings>
 
-	<setting propertyKey="@Properties.presetNumber" title="@Strings.PresetNumberLabel" prompt="@Strings.PresetNumberPrompt">
+	<setting propertyKey="@Properties.presetNumber" title="@Strings.PresetNumberLabel">
 		<settingConfig type="list" required="true">
 			<listEntry value="1">@Strings.lats</listEntry>
 			<listEntry value="2">@Strings.abs</listEntry>
 		</settingConfig>
+	</setting>
+	
+	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
+	</setting>
+	
+	<setting propertyKey="@Properties.workTime2" title="@Strings.WorkTimeLabel">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
 	</setting>
 	
 </settings>

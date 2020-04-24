@@ -4,7 +4,9 @@
     <string id="prompt">Press 'Start'</string>
     
     <string id="PresetNumberLabel">Preset</string>
-    <string id="PresetNumberPrompt">Select a preset</string>
+    <string id="WorkTimeLabel">Work duration</string>
+    
+    <string id="TimeError">Duration cannot be less than 1 second</string>
     
     <string id="lats">Lats</string>
     <string id="abs">Abs</string>
