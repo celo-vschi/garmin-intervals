@@ -1,4 +1,4 @@
-<menu id="MainMenu">
+<menu id="SelectPresetMenu">
     <menu-item id="item_1" label="Abs" />
     <menu-item id="item_2" label="Lats" />
 </menu>

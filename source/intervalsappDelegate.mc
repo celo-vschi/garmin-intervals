@@ -1,4 +1,5 @@
 using Toybox.WatchUi;
+using Toybox.System;
 
 class intervalsappDelegate extends WatchUi.BehaviorDelegate {
 
@@ -6,9 +7,23 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
         BehaviorDelegate.initialize();
     }
 
+    function onKey(keyEvent) {
+    	if (keyEvent.getKey() == WatchUi.KEY_DOWN) {
+    		openSelectPresetMenu();
+    	}
+    	return true;
+	}
+
     function onMenu() {
-        WatchUi.pushView(new Rez.Menus.MainMenu(), new intervalsappMenuDelegate(), WatchUi.SLIDE_UP);
+    	// will come later
         return true;
     }
+    
+    private function openSelectPresetMenu() {
+    	var menu = new Rez.Menus.SelectPresetMenu();
+		menu.setTitle("Choose Preset");
+    	WatchUi.pushView(menu, new intervalsappMenuDelegate(), WatchUi.SLIDE_UP);
+    }
+    
 
 }
