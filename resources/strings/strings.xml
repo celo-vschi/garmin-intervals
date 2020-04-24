@@ -2,4 +2,10 @@
     <string id="AppName">intervals-app</string>
 
     <string id="prompt">Press 'Start'</string>
+    
+    <string id="PresetNumberLabel">Preset</string>
+    <string id="PresetNumberPrompt">Select a preset</string>
+    
+    <string id="lats">Lats</string>
+    <string id="abs">Abs</string>
 </strings>

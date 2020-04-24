@@ -1,0 +1,10 @@
+<settings>
+
+	<setting propertyKey="@Properties.presetNumber" title="@Strings.PresetNumberLabel" prompt="@Strings.PresetNumberPrompt">
+		<settingConfig type="list" required="true">
+			<listEntry value="1">@Strings.lats</listEntry>
+			<listEntry value="2">@Strings.abs</listEntry>
+		</settingConfig>
+	</setting>
+	
+</settings>
