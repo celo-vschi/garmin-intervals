@@ -28,5 +28,9 @@ class intervalsappView extends WatchUi.View {
     // memory.
     function onHide() {
     }
+    
+    function loadProperties() {
+    	Properties.getPresetNumber();
+    }
 
 }

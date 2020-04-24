@@ -8,10 +8,10 @@ class intervalsappMenuDelegate extends WatchUi.MenuInputDelegate {
     }
 
     function onMenuItem(item) {
-        if (item == :item_1) {
-            System.println(:item_1.toString());
-        } else if (item == :item_2) {
-            System.println(:item_2.toString());
+        if (item == :lats) {
+            System.println(:lats.toString());
+        } else if (item == :abs) {
+            System.println(:abs.toString());
         }
     }
 
