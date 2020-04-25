@@ -1,13 +1,13 @@
 <strings>
     <string id="AppName">intervals-app</string>
 
-    <string id="prompt">Press 'Start'</string>
+    <string id="instructions">Press 'Start'</string>
     
     <string id="PresetNumberLabel">Preset</string>
     <string id="WorkTimeLabel">Work duration</string>
     
     <string id="TimeError">Duration cannot be less than 1 second</string>
     
-    <string id="lats">Lats</string>
-    <string id="abs">Abs</string>
+    <string id="preset1">Lats</string>
+    <string id="preset2">Abs</string>
 </strings>

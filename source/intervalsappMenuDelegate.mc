@@ -1,7 +1,6 @@
 using Toybox.WatchUi;
 using Toybox.System;
 
-
 class intervalsappMenuDelegate extends WatchUi.MenuInputDelegate {
 
     function initialize() {
@@ -14,7 +13,6 @@ class intervalsappMenuDelegate extends WatchUi.MenuInputDelegate {
         } else if (item == :preset_2) {
             Properties.setPresetNumber(2);
         }
-        Properties.getPresetNumber();
     }
 
 }

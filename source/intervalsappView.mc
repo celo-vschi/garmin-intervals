@@ -1,6 +1,9 @@
+using Toybox.System;
 using Toybox.WatchUi;
 
 class intervalsappView extends WatchUi.View {
+
+	const DRAWABLE_PRESET_NAME = "PresetName";
 
     function initialize() {
         View.initialize();
@@ -19,6 +22,13 @@ class intervalsappView extends WatchUi.View {
 
     // Update the view
     function onUpdate(dc) {
+    	var presetName = Properties.getPresetName();
+
+    	// Set the preset name text
+    	var drawable = View.findDrawableById(DRAWABLE_PRESET_NAME);
+    	drawable.setText("#" + presetName.toLower());
+
+    
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }

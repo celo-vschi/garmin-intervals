@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.WatchUi as Ui;
 using Toybox.System;
 
 module Properties {
@@ -9,10 +10,23 @@ module Properties {
 	function getPresetNumber() {
 		var app = App.getApp();
 		var presetNumber = app.getProperty(PROP_PRESET_NUMBER);
-		System.println(presetNumber);
 		
-		var workTime = app.getProperty(PROP_WORK_TIME + presetNumber);
-		System.println(workTime);
+//		var workTime = app.getProperty(PROP_WORK_TIME + presetNumber);
+//		System.println(workTime);
+		return presetNumber;
+	}
+	
+	function getPresetName() {
+		var app = App.getApp();
+		var presetNumber = getPresetNumber();
+		var presetName;  
+		switch (presetNumber) {
+			case 1: presetName = Ui.loadResource(Rez.Strings.preset1);
+				break;
+			case 2: presetName = Ui.loadResource(Rez.Strings.preset2);
+				break;
+		}
+		return presetName;
 	}
 	
 	function setPresetNumber(presetNumber) {

@@ -12,8 +12,9 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     function onKey(keyEvent) {
     	if (keyEvent.getKey() == WatchUi.KEY_DOWN) {
     		openSelectPresetMenu();
+    		return true;
     	}
-    	return true;
+    	return false;
 	}
 
     function onMenu() {
