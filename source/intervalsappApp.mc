@@ -9,19 +9,18 @@ class intervalsappApp extends Application.AppBase {
         AppBase.initialize();
     }
 
-    // onStart() is called on application start up
-    function onStart(state) {
-    }
-
-    // onStop() is called when your application is exiting
-    function onStop(state) {
-    }
-
-    // Return the initial view of your application here
     function getInitialView() {
     	view = new intervalsappView();
     	view.loadProperties();
-        return [ view, new intervalsappDelegate() ];
+    	
+    	var delegate = new intervalsappDelegate();
+    	delegate.setView(view);
+    	
+        return [ view, delegate ];
     }
-
+    
+    function onSettingsChanged() {
+		view.loadProperties();
+		WatchUi.requestUpdate();
+	}
 }

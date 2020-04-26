@@ -4,6 +4,10 @@ using Toybox.WatchUi;
 class intervalsappView extends WatchUi.View {
 
 	const DRAWABLE_PRESET_NAME = "PresetName";
+	
+	private var PROP_WORK_TIME;
+	private var PROP_REST_TIME;
+	private var PROP_EXERCISES;
 
     function initialize() {
         View.initialize();
@@ -39,8 +43,21 @@ class intervalsappView extends WatchUi.View {
     function onHide() {
     }
     
+    function startActivity() {
+    	loadProperties();
+    	WatchUi.requestUpdate();
+    }
+    
     function loadProperties() {
-    	Properties.getPresetNumber();
+    	PROP_WORK_TIME = Properties.getWorkTime();
+    	System.println("Work time: " + PROP_WORK_TIME);
+    	
+    	PROP_REST_TIME = Properties.getRestTime();
+    	System.println("Rest time: " + PROP_REST_TIME);
+    	
+    	PROP_EXERCISES = Properties.getExercises();
+    	System.println("Exercises: " + PROP_EXERCISES);
+    	
     }
 
 }

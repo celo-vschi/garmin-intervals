@@ -6,6 +6,7 @@
     
     <string id="PresetNumberLabel">Preset</string>
     <string id="WorkTimeLabel">Work duration</string>
+    <string id="RestTimeLabel">Rest duration</string>
     
     <string id="TimeError">Duration cannot be less than 1 second</string>
     

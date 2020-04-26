@@ -3,6 +3,8 @@ using Toybox.System;
 
 class intervalsappDelegate extends WatchUi.BehaviorDelegate {
 
+	private var view = null;
+
 	private var PRESET_MENU_TITLE = "Choose Preset";
 
     function initialize() {
@@ -15,7 +17,8 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     		openSelectPresetMenu();
     		return true;
     	} else if (key == WatchUi.KEY_ENTER) {
-    		System.println("enter");
+    		System.println("starting activity ...");
+    		view.startActivity();
     		return true;
 		}
     	return false;
@@ -24,6 +27,10 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     function onMenu() {
     	// will come later
         return true;
+    }
+    
+    function setView(view) {
+    	me.view = view;
     }
     
     private function openSelectPresetMenu() {

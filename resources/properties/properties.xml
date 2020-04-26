@@ -2,5 +2,10 @@
 	<property id="presetNumber" type="number">2</property>
 	
 	<property id="workTime1" type="number">25</property>
+	<property id="restTime1" type="number">5</property>
+	<property id="exercises1" type="number">12</property>
+	
 	<property id="workTime2" type="number">5</property>
+	<property id="restTime2" type="number">7</property>
+	<property id="exercises2" type="number">8</property>
 </properties>

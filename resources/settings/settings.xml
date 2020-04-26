@@ -10,8 +10,14 @@
 	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
 	</setting>
+	<setting propertyKey="@Properties.restTime1" title="@Strings.RestTimeLabel">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
+	</setting>
 	
 	<setting propertyKey="@Properties.workTime2" title="@Strings.WorkTimeLabel">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
+	</setting>
+	<setting propertyKey="@Properties.restTime2" title="@Strings.RestTimeLabel">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
 	</setting>
 	

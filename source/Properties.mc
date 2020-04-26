@@ -5,20 +5,44 @@ using Toybox.System;
 module Properties {
 
 	const PROP_PRESET_NUMBER = "presetNumber";
+	
 	const PROP_WORK_TIME =  "workTime";
+	const PROP_REST_TIME = "restTime";
+	const PROP_EXERCISES = "exercises";
 
-	function getPresetNumber() {
-		var app = App.getApp();
+	function getPresetNumber(app) {
 		var presetNumber = app.getProperty(PROP_PRESET_NUMBER);
-		
-//		var workTime = app.getProperty(PROP_WORK_TIME + presetNumber);
-//		System.println(workTime);
 		return presetNumber;
 	}
 	
+	function getWorkTime() {
+		var app = App.getApp();
+
+		var preset = getPresetNumber(app);
+		var workTime = app.getProperty(PROP_WORK_TIME + preset);
+		return workTime;
+	}
+	
+	function getRestTime() {
+		var app = App.getApp();
+		
+		var preset = getPresetNumber(app);
+		var restTime = app.getProperty(PROP_REST_TIME + preset);
+		return restTime;
+	}
+	
+	function getExercises() {
+	var app = App.getApp();
+		
+	var preset = getPresetNumber(app);
+	var exercises = app.getProperty(PROP_EXERCISES + preset);
+	return exercises;
+	}
+	
+	
 	function getPresetName() {
 		var app = App.getApp();
-		var presetNumber = getPresetNumber();
+		var presetNumber = getPresetNumber(app);
 		var presetName;  
 		switch (presetNumber) {
 			case 1: presetName = Ui.loadResource(Rez.Strings.preset1);
