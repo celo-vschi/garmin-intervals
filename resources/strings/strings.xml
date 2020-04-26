@@ -1,5 +1,6 @@
 <strings>
     <string id="AppName">intervals-app</string>
+	<string id="no_value">--</string>
 
     <string id="instructions">Press 'Start'</string>
     
