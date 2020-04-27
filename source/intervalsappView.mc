@@ -5,8 +5,10 @@ using Toybox.Graphics;
 
 class intervalsappView extends WatchUi.View {
 
-	const DRAWABLE_PRESET_NAME = "PresetName";
+	const DRAWABLE_PRESET = "PresetName";
 	const DRAWABLE_INSTRUCTIONS = "InstructionsLabel";
+	const DRAWABLE_TIMER = "TimerLabel";
+	const DRAWABLE_EXERCISE = "ExerciseLabel";
 	
 	private var PROP_WORK_TIME;
 	private var PROP_REST_TIME;
@@ -41,13 +43,21 @@ class intervalsappView extends WatchUi.View {
     function onUpdate(dc) {
     	var presetName = Properties.getPresetName();
 
-    	// Set the preset name text
-    	var drawable = View.findDrawableById(DRAWABLE_PRESET_NAME);
+    	// draw the preset name text
+    	var drawable = View.findDrawableById(DRAWABLE_PRESET);
     	drawable.setText("#" + presetName.toLower());
     	
-    	// Draw the main text
+    	// draw the main text
     	drawable = View.findDrawableById(DRAWABLE_INSTRUCTIONS);
     	drawInstructions(drawable);
+    	
+    	// draw the timer
+    	drawable = View.findDrawableById(DRAWABLE_TIMER);
+    	drawTimer(drawable);
+    	
+    	// draw the exercise count
+    	drawable = View.findDrawableById(DRAWABLE_EXERCISE);
+    	drawExercise(drawable);
 
     
         // Call the parent onUpdate function to redraw the layout
@@ -84,11 +94,9 @@ class intervalsappView extends WatchUi.View {
 			if (RESTING) {
 				var delay = EXERCISES < 1 ? PREP : PROP_REST_TIME;
 				if (PERIOD_TIME >= delay) {
-					System.println("switching to workout ...");
 					switchToWorkout();
 				}
 			} else if (PERIOD_TIME >= PROP_WORK_TIME) {
-				System.println("switching to rest ...");
 				switchToRest();
 			}
     	}
@@ -99,11 +107,15 @@ class intervalsappView extends WatchUi.View {
     	EXERCISES++;
     	PERIOD_TIME = 0;
     	RESTING = false;
+    	
+    	Notifications.notifyEnd();
     }
     
     function switchToRest() {
     	PERIOD_TIME = 0;
     	RESTING = true;
+    	
+    	Notifications.notifyEnd();
     	
     	// if is done .. bla bla
     }
@@ -114,8 +126,13 @@ class intervalsappView extends WatchUi.View {
 
     	if (RUNNING) {
     		if (RESTING) {
-    			text = EXERCISES < 1 ? WatchUi.loadResource(Rez.Strings.get_ready) : WatchUi.loadResource(Rez.Strings.rest);
-    			color = Graphics.COLOR_GREEN; 
+    			if (EXERCISES < 1) {
+    				text = WatchUi.loadResource(Rez.Strings.get_ready);
+    				color = Graphics.COLOR_YELLOW;
+    			} else {
+    				text = WatchUi.loadResource(Rez.Strings.rest);
+    				color = Graphics.COLOR_GREEN;
+				} 
     		} else {
     			text = WatchUi.loadResource(Rez.Strings.work);
     			color = Graphics.COLOR_RED;
@@ -127,6 +144,32 @@ class intervalsappView extends WatchUi.View {
     	
     	drawable.setText(text);
     	drawable.setColor(color);
+    }
+    
+    function drawTimer(drawable) {
+		var text;
+	
+		if (RUNNING) {
+			var delay = EXERCISES < 1 ? PREP : PROP_REST_TIME;
+			var seconds = (RESTING ? delay : PROP_WORK_TIME) - PERIOD_TIME;
+			text = Utils.formatTimerValue(seconds);	
+		} else {
+			text = WatchUi.loadResource(Rez.Strings.no_value);
+		}
+		
+		drawable.setText(text);	
+    }
+    
+    function drawExercise(drawable) {
+    	var text;
+    	
+    	if (RUNNING && EXERCISES > 0) {
+    		text = Utils.formatExerciseLabel(EXERCISES, PROP_EXERCISES);
+    	} else {
+    		text = WatchUi.loadResource(Rez.Strings.no_value);
+    	}
+    	
+    	drawable.setText(text);
     }
     
     function loadProperties() {
