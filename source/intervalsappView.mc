@@ -87,6 +87,20 @@ class intervalsappView extends WatchUi.View {
     	WatchUi.requestUpdate();
     }
     
+    function stopActivity() {
+    	TIMER.stop();
+		closeActivity();    	
+    }
+    
+    function closeActivity() {
+    	RUNNING = false;
+    	RESTING = false;
+    	EXERCISES = 0;
+    	PERIOD_TIME = 0;
+    	
+    	WatchUi.requestUpdate();
+    }
+    
     function timerAction() {
     	if (RUNNING) {
     		PERIOD_TIME++;
@@ -116,8 +130,10 @@ class intervalsappView extends WatchUi.View {
     	RESTING = true;
     	
     	Notifications.notifyEnd();
-    	
-    	// if is done .. bla bla
+
+		if (isFinished()) {
+			stopActivity();
+		}    	
     }
     
     function drawInstructions(drawable) {
@@ -152,7 +168,7 @@ class intervalsappView extends WatchUi.View {
 		if (RUNNING) {
 			var delay = EXERCISES < 1 ? PREP : PROP_REST_TIME;
 			var seconds = (RESTING ? delay : PROP_WORK_TIME) - PERIOD_TIME;
-			text = Utils.formatTimerValue(seconds);	
+			text = Utils.formatTimerLabel(seconds);	
 		} else {
 			text = WatchUi.loadResource(Rez.Strings.no_value);
 		}
@@ -171,6 +187,22 @@ class intervalsappView extends WatchUi.View {
     	
     	drawable.setText(text);
     }
+    
+    function isRunning() {
+    	return RUNNING;
+	}
+	
+	function isWorking() {
+		return RUNNING && !RESTING;
+	}
+	
+	function isResting() {
+		return RUNNING && RESTING;
+	}
+	
+	function isFinished() {
+		return !RUNNING || EXERCISES >= PROP_EXERCISES;
+	}
     
     function loadProperties() {
     	PROP_WORK_TIME = Properties.getWorkTime();

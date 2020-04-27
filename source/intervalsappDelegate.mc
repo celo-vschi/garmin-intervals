@@ -10,6 +10,16 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     function initialize() {
         BehaviorDelegate.initialize();
     }
+    
+    function onBack() {
+    	if (view == null) {
+    		return false;
+    	} else if (view.isRunning()) {
+			view.stopActivity();
+			return true;
+    	}
+    	return false;
+    }
 
     function onKey(keyEvent) {
     	var key = keyEvent.getKey();
@@ -17,7 +27,6 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     		openSelectPresetMenu();
     		return true;
     	} else if (key == WatchUi.KEY_ENTER) {
-    		System.println("starting activity ...");
     		view.startActivity();
     		return true;
 		}

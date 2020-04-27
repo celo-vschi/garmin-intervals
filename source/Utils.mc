@@ -2,7 +2,7 @@ using Toybox.Lang;
 
 module Utils {
 
-	function formatTimerValue(seconds) {
+	function formatTimerLabel(seconds) {
 		var timer;
 		
 		if (seconds < 10) {
