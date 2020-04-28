@@ -7,6 +7,10 @@
 		</settingConfig>
 	</setting>
 	
+	<setting propertyKey="@Properties.prepareTime" title="@Strings.PrepareTimeLabel">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
+	</setting>
+	
 	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.TimeError" />
 	</setting>

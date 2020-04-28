@@ -8,6 +8,7 @@
     <string id="rest">REST</string>
     
     <string id="PresetNumberLabel">Preset</string>
+    <string id="PrepareTimeLabel">Preparation duration</string>
     <string id="WorkTimeLabel">Work duration</string>
     <string id="RestTimeLabel">Rest duration</string>
     

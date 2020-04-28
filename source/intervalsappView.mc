@@ -13,7 +13,7 @@ class intervalsappView extends WatchUi.View {
 	private var PROP_WORK_TIME;
 	private var PROP_REST_TIME;
 	private var PROP_EXERCISES;
-	private var PREP = 3; // to be added to props
+	private var PROP_PREP_TIME;
 	
 	private var RUNNING = false;
 	private var RESTING = false;
@@ -106,7 +106,7 @@ class intervalsappView extends WatchUi.View {
     		PERIOD_TIME++;
 			
 			if (RESTING) {
-				var delay = EXERCISES < 1 ? PREP : PROP_REST_TIME;
+				var delay = EXERCISES < 1 ? PROP_PREP_TIME : PROP_REST_TIME;
 				if (PERIOD_TIME >= delay) {
 					switchToWorkout();
 				}
@@ -166,7 +166,7 @@ class intervalsappView extends WatchUi.View {
 		var text;
 	
 		if (RUNNING) {
-			var delay = EXERCISES < 1 ? PREP : PROP_REST_TIME;
+			var delay = EXERCISES < 1 ? PROP_PREP_TIME : PROP_REST_TIME;
 			var seconds = (RESTING ? delay : PROP_WORK_TIME) - PERIOD_TIME;
 			text = Utils.formatTimerLabel(seconds);	
 		} else {
@@ -213,6 +213,9 @@ class intervalsappView extends WatchUi.View {
     	
     	PROP_EXERCISES = Properties.getExercises();
     	System.println("Exercises: " + PROP_EXERCISES);
+    	
+    	PROP_PREP_TIME = Properties.getPrepareTime();
+    	System.println("Prep time: " + PROP_PREP_TIME);
     }
 
 }
