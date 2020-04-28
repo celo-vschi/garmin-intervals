@@ -42,7 +42,9 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
 	}
 
     function onMenu() {
-    	// will come later
+    	if (!view.isRunning()) {
+	    	System.print("should open menu");
+    	} 
         return true;
     }
     
