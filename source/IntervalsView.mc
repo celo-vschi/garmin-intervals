@@ -3,7 +3,7 @@ using Toybox.WatchUi;
 using Toybox.Timer;
 using Toybox.Graphics;
 
-class intervalsappView extends WatchUi.View {
+class IntervalsView extends WatchUi.View {
 
 	const DRAWABLE_PRESET = "PresetName";
 	const DRAWABLE_INSTRUCTIONS = "InstructionsLabel";

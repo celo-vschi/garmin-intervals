@@ -1,7 +1,7 @@
 using Toybox.WatchUi;
 using Toybox.System;
 
-class intervalsappDelegate extends WatchUi.BehaviorDelegate {
+class IntervalsDelegate extends WatchUi.BehaviorDelegate {
 
 	private var view = null;
 
@@ -55,7 +55,7 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     private function openSelectPresetMenu() {
     	var menu = new Rez.Menus.SelectPresetMenu();
 		menu.setTitle(PRESET_MENU_TITLE);
-    	WatchUi.pushView(menu, new intervalsappMenuDelegate(), WatchUi.SLIDE_UP);
+    	WatchUi.pushView(menu, new SelectPresetDelegate(), WatchUi.SLIDE_UP);
     }
     
 

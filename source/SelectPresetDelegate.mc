@@ -1,7 +1,7 @@
 using Toybox.WatchUi;
 using Toybox.System;
 
-class intervalsappMenuDelegate extends WatchUi.MenuInputDelegate {
+class SelectPresetDelegate extends WatchUi.MenuInputDelegate {
 
     function initialize() {
         MenuInputDelegate.initialize();

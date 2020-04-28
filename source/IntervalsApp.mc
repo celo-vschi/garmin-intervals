@@ -1,7 +1,7 @@
 using Toybox.Application;
 using Toybox.WatchUi;
 
-class intervalsappApp extends Application.AppBase {
+class IntervalsApp extends Application.AppBase {
 
 	private var view;
 
@@ -10,10 +10,10 @@ class intervalsappApp extends Application.AppBase {
     }
 
     function getInitialView() {
-    	view = new intervalsappView();
+    	view = new IntervalsView();
     	view.loadProperties();
     	
-    	var delegate = new intervalsappDelegate();
+    	var delegate = new IntervalsDelegate();
     	delegate.setView(view);
     	
         return [ view, delegate ];
