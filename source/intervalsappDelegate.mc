@@ -27,7 +27,15 @@ class intervalsappDelegate extends WatchUi.BehaviorDelegate {
     		openSelectPresetMenu();
     		return true;
     	} else if (key == WatchUi.KEY_ENTER) {
-    		view.startActivity();
+    		if (view.isRunning()) {
+    			if (view.isPaused()) {
+    				view.resumeActivity();			
+    			} else {
+					view.pauseActivity();    	
+    			}
+    		} else {
+    			view.startActivity();
+    		}
     		return true;
 		}
     	return false;

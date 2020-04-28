@@ -17,6 +17,7 @@ class intervalsappView extends WatchUi.View {
 	
 	private var RUNNING = false;
 	private var RESTING = false;
+	private var PAUSED = false;
 	
 	private var EXERCISES = 0;
 	private var PERIOD_TIME = 0;
@@ -80,7 +81,7 @@ class intervalsappView extends WatchUi.View {
     	EXERCISES = 0;
     	PERIOD_TIME = 0;
     	
-    	// start timre
+    	// start timer
     	TIMER = new Timer.Timer();
     	TIMER.start(method(:timerAction), 1000, true);
     	
@@ -90,6 +91,20 @@ class intervalsappView extends WatchUi.View {
     function stopActivity() {
     	TIMER.stop();
 		closeActivity();    	
+    }
+    
+    function pauseActivity() {
+    	TIMER.stop();
+    	PAUSED = true;
+
+		WatchUi.requestUpdate();
+    }
+    
+    function resumeActivity() {
+    	PAUSED = false;
+    	TIMER.start(method(:timerAction), 1000, true);
+    	
+    	WatchUi.requestUpdate();
     }
     
     function closeActivity() {
@@ -114,7 +129,7 @@ class intervalsappView extends WatchUi.View {
 				switchToRest();
 			}
     	}
-		WatchUi.requestUpdate();    	
+		WatchUi.requestUpdate();
     }
     
     function switchToWorkout() {
@@ -153,6 +168,12 @@ class intervalsappView extends WatchUi.View {
     			text = WatchUi.loadResource(Rez.Strings.work);
     			color = Graphics.COLOR_RED;
 			}
+			
+			if (PAUSED) {
+				text = WatchUi.loadResource(Rez.Strings.paused);
+				color = Graphics.COLOR_YELLOW;
+			}
+			
     	} else {
     		text = WatchUi.loadResource(Rez.Strings.press_start);
     		color = Graphics.COLOR_WHITE;
@@ -202,6 +223,10 @@ class intervalsappView extends WatchUi.View {
 	
 	function isFinished() {
 		return !RUNNING || EXERCISES >= PROP_EXERCISES;
+	}
+	
+	function isPaused() {
+		return RUNNING && PAUSED;
 	}
     
     function loadProperties() {

@@ -6,6 +6,7 @@
     <string id="get_ready">Get ready ...</string>
     <string id="work">WORK</string>
     <string id="rest">REST</string>
+    <string id="paused">PAUSED</string>
     
     <string id="PresetNumberLabel">Preset</string>
     <string id="PrepareTimeLabel">Preparation duration</string>
