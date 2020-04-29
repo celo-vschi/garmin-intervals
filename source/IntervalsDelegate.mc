@@ -24,7 +24,9 @@ class IntervalsDelegate extends WatchUi.BehaviorDelegate {
     function onKey(keyEvent) {
     	var key = keyEvent.getKey();
     	if (key == WatchUi.KEY_DOWN) {
-    		openSelectPresetMenu();
+    		if (!view.isRunning()) {
+    			openSelectPresetMenu();
+			} 		
     		return true;
     	} else if (key == WatchUi.KEY_ENTER) {
     		if (view.isRunning()) {

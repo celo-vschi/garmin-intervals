@@ -14,7 +14,7 @@ class SettingsDelegate extends WatchUi.MenuInputDelegate {
 		if (item == :prepTime) {
 			var label = Rez.Strings.PrepTimeLabel;
 			var value = Properties.getPrepTime();
-			var delegate = new TimePickerDelegate(:prepTime);
+			var delegate = new NumberPickerDelegate(:prepTime);
 			
 			WatchUi.pushView(new NumberPicker(label, value, 1, 99), delegate, WatchUi.SLIDE_IMMEDIATE);
 		} 	

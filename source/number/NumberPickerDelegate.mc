@@ -1,7 +1,7 @@
 using Toybox.WatchUi;
 using Toybox.System;
 
-class TimePickerDelegate extends WatchUi.PickerDelegate {
+class NumberPickerDelegate extends WatchUi.PickerDelegate {
 	
 	private var mSetting;
 	
