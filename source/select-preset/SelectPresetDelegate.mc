@@ -24,15 +24,6 @@ class SelectPresetDelegate extends WatchUi.MenuInputDelegate {
         	case :preset5:
 	            Properties.setPresetNumber(5);
         		break;
-        	case :preset6:
-	            Properties.setPresetNumber(6);
-        		break;
-    		case :preset7:
-	            Properties.setPresetNumber(7);
-        		break;
-        	case :preset8:
-	            Properties.setPresetNumber(8);
-        		break;
         }
 	}
 	        

@@ -5,13 +5,13 @@ class SelectPresetMenu extends WatchUi.Menu {
 
 	const EMPTY = "-";
 	
-	function initialize() {
+	function initialize(edit) {
 		Menu.initialize();
-		setTitle("Select Preset");
+		setTitle("Presets");
 		
 		var presetName = null; 
 		var label = null;
-		for (var i=1; i<=8; i++) {
+		for (var i=1; i<=5; i++) {
 			switch(i) {
 				case 1: 
 					presetName = WatchUi.loadResource(Rez.Strings.preset1);
@@ -33,18 +33,6 @@ class SelectPresetMenu extends WatchUi.Menu {
 					presetName = WatchUi.loadResource(Rez.Strings.preset5);
 					label = :preset5;
 					break;
-				case 6: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset6);
-					label = :preset6;
-					break;
-				case 7: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset7);
-					label = :preset7;
-					break;
-				case 8: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset8);
-					label = :preset8;
-					break;
 				default: presetName = null;
 					break;
 			}
@@ -53,6 +41,11 @@ class SelectPresetMenu extends WatchUi.Menu {
 				addItem(presetName, label);
 			}
 		}
+		
+		if (edit) {
+			addItem("Add New", :addNew);
+		}
+		
 	}
 
 }

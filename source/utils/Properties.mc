@@ -68,15 +68,6 @@ module Properties {
 			case 5:
 				presetName = Ui.loadResource(Rez.Strings.preset5);
 				break;
-			case 6:
-				presetName = Ui.loadResource(Rez.Strings.preset6);
-				break;
-			case 7: 
-				presetName = Ui.loadResource(Rez.Strings.preset7);
-				break;
-			case 8: 
-				presetName = Ui.loadResource(Rez.Strings.preset8);
-				break;
 		}
 		return presetName;
 	}
@@ -88,6 +79,40 @@ module Properties {
 	function setPrepTime(prepTime) {
 		App.getApp().setProperty(PROP_PREP_TIME, prepTime);
 	}
+	
+	function getExercisesForPreset(preset) {
+		var app = App.getApp();
+		
+		var exercises = app.getProperty(PROP_EXERCISES + preset);
+		return exercises;
+	}
+	
+	function setExercises(id, value) {
+		App.getApp().setProperty(PROP_EXERCISES + id, value);
+	}
+	
+	function getWorkTimeForPreset(preset) {
+		var app = App.getApp();
+		
+		var workTime = app.getProperty(PROP_WORK_TIME + preset);
+		return workTime;
+	}
+	
+	function setWorkTime(id, value) {
+		App.getApp().setProperty(PROP_WORK_TIME + id, value);
+	}
+	
+	function getRestTimeForPreset(preset) {
+		var app = App.getApp();
+		
+		var restTime = app.getProperty(PROP_REST_TIME + preset);
+		return restTime;
+	}
+	
+	function setRestTime(id, value) {
+		App.getApp().setProperty(PROP_REST_TIME + id, value);
+	}
+	
 
 		
 }

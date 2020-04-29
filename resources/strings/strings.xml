@@ -9,9 +9,14 @@
     <string id="paused">paused ...</string>
     
     <string id="PresetNumberLabel">Preset</string>
+    <string id="ExercisesLabel">Exercises</string>
     <string id="PrepTimeLabel">Prep duration</string>
     <string id="WorkTimeLabel">Work duration</string>
     <string id="RestTimeLabel">Rest duration</string>
+
+
+    <string id="DeletePresetLabel">Delete</string>
+    <string id="EditPresetsLabel">Edit Presets</string>
     
     <string id="TimeError">Duration cannot be less than 1 second</string>
     
@@ -20,7 +25,5 @@
     <string id="preset3">Custom</string>
     <string id="preset4">-</string>
     <string id="preset5">-</string>
-    <string id="preset6">-</string>
-    <string id="preset7">-</string>
-    <string id="preset8">-</string>
+   
 </strings>

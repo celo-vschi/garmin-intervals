@@ -23,16 +23,4 @@
 	<property id="restTime5" type="number">7</property>
 	<property id="exercises5" type="number">8</property>
 
-	<property id="workTime6" type="number">6</property>
-	<property id="restTime6" type="number">7</property>
-	<property id="exercises6" type="number">8</property>
-	
-	<property id="workTime7" type="number">7</property>
-	<property id="restTime7" type="number">7</property>
-	<property id="exercises7" type="number">8</property>
-	
-	<property id="workTime8" type="number">8</property>
-	<property id="restTime8" type="number">8</property>
-	<property id="exercises8" type="number">8</property>
-	
 </properties>
