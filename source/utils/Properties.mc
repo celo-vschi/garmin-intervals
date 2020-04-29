@@ -53,9 +53,29 @@ module Properties {
 		var presetNumber = getPresetNumber(app);
 		var presetName;  
 		switch (presetNumber) {
-			case 1: presetName = Ui.loadResource(Rez.Strings.preset1);
+			case 1: 
+				presetName = Ui.loadResource(Rez.Strings.preset1);
 				break;
-			case 2: presetName = Ui.loadResource(Rez.Strings.preset2);
+			case 2: 
+				presetName = Ui.loadResource(Rez.Strings.preset2);
+				break;
+			case 3: 
+				presetName = Ui.loadResource(Rez.Strings.preset3);
+				break;
+			case 4:
+				presetName = Ui.loadResource(Rez.Strings.preset4);
+				break;
+			case 5:
+				presetName = Ui.loadResource(Rez.Strings.preset5);
+				break;
+			case 6:
+				presetName = Ui.loadResource(Rez.Strings.preset6);
+				break;
+			case 7: 
+				presetName = Ui.loadResource(Rez.Strings.preset7);
+				break;
+			case 8: 
+				presetName = Ui.loadResource(Rez.Strings.preset8);
 				break;
 		}
 		return presetName;

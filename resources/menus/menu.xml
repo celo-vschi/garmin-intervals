@@ -1,4 +1,0 @@
-<menu id="SelectPresetMenu">
-    <menu-item id="preset_1" label="@Strings.preset1" />
-    <menu-item id="preset_2" label="@Strings.preset2" />
-</menu>

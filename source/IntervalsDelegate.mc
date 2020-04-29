@@ -25,7 +25,7 @@ class IntervalsDelegate extends WatchUi.BehaviorDelegate {
     	var key = keyEvent.getKey();
     	if (key == WatchUi.KEY_DOWN) {
     		if (!view.isRunning()) {
-    			openSelectPresetMenu();
+    			WatchUi.pushView(new SelectPresetMenu(), new SelectPresetDelegate(), WatchUi.SLIDE_UP);
 			} 		
     		return true;
     	} else if (key == WatchUi.KEY_ENTER) {
@@ -53,12 +53,5 @@ class IntervalsDelegate extends WatchUi.BehaviorDelegate {
     function setView(view) {
     	me.view = view;
     }
-    
-    private function openSelectPresetMenu() {
-    	var menu = new Rez.Menus.SelectPresetMenu();
-		menu.setTitle(PRESET_MENU_TITLE);
-    	WatchUi.pushView(menu, new SelectPresetDelegate(), WatchUi.SLIDE_UP);
-    }
-    
 
 }

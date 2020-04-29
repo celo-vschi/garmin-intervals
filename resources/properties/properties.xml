@@ -1,8 +1,8 @@
 <properties>
 	<property id="presetNumber" type="number">2</property>
-	
 	<property id="prepTime" type="number">3</property>
 	
+	<!-- presets -->
 	<property id="workTime1" type="number">25</property>
 	<property id="restTime1" type="number">5</property>
 	<property id="exercises1" type="number">12</property>
@@ -10,4 +10,29 @@
 	<property id="workTime2" type="number">5</property>
 	<property id="restTime2" type="number">7</property>
 	<property id="exercises2" type="number">8</property>
+	
+	<property id="workTime3" type="number">5</property>
+	<property id="restTime3" type="number">7</property>
+	<property id="exercises3" type="number">8</property>
+	
+	<property id="workTime4" type="number">5</property>
+	<property id="restTime4" type="number">7</property>
+	<property id="exercises4" type="number">8</property>
+	
+	<property id="workTime5" type="number">5</property>
+	<property id="restTime5" type="number">7</property>
+	<property id="exercises5" type="number">8</property>
+
+	<property id="workTime6" type="number">6</property>
+	<property id="restTime6" type="number">7</property>
+	<property id="exercises6" type="number">8</property>
+	
+	<property id="workTime7" type="number">7</property>
+	<property id="restTime7" type="number">7</property>
+	<property id="exercises7" type="number">8</property>
+	
+	<property id="workTime8" type="number">8</property>
+	<property id="restTime8" type="number">8</property>
+	<property id="exercises8" type="number">8</property>
+	
 </properties>
