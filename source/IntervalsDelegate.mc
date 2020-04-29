@@ -43,7 +43,7 @@ class IntervalsDelegate extends WatchUi.BehaviorDelegate {
 
     function onMenu() {
     	if (!view.isRunning()) {
-	    	System.print("should open menu");
+	    	WatchUi.pushView(new SettingsMenu(), new SettingsDelegate(), WatchUi.SLIDE_UP);
     	} 
         return true;
     }

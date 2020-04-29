@@ -230,17 +230,16 @@ class IntervalsView extends WatchUi.View {
 	}
     
     function loadProperties() {
-    	PROP_WORK_TIME = Properties.getWorkTime();
-    	System.println("Work time: " + PROP_WORK_TIME);
-    	
-    	PROP_REST_TIME = Properties.getRestTime();
-    	System.println("Rest time: " + PROP_REST_TIME);
-    	
+    	PROP_PREP_TIME = Properties.getPrepTime();
     	PROP_EXERCISES = Properties.getExercises();
-    	System.println("Exercises: " + PROP_EXERCISES);
-    	
-    	PROP_PREP_TIME = Properties.getPrepareTime();
+    	PROP_WORK_TIME = Properties.getWorkTime();
+    	PROP_REST_TIME = Properties.getRestTime();
+		/*
     	System.println("Prep time: " + PROP_PREP_TIME);
+    	System.println("Exercises: " + PROP_EXERCISES);
+    	System.println("Work time: " + PROP_WORK_TIME);
+    	System.println("Rest time: " + PROP_REST_TIME);
+    	*/
     }
 
 }

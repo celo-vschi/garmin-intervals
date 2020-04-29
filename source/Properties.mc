@@ -9,18 +9,18 @@ module Properties {
 	const PROP_WORK_TIME =  "workTime";
 	const PROP_REST_TIME = "restTime";
 	const PROP_EXERCISES = "exercises";
-	const PROP_PREPARE_TIME = "prepareTime";
+	const PROP_PREP_TIME = "prepTime";
 
 	function getPresetNumber(app) {
 		var presetNumber = app.getProperty(PROP_PRESET_NUMBER);
 		return presetNumber;
 	}
 	
-	function getPrepareTime() {
+	function getPrepTime() {
 		var app = App.getApp();
 		
-		var prepareTime = app.getProperty(PROP_PREPARE_TIME);
-		return prepareTime;
+		var prepTime = app.getProperty(PROP_PREP_TIME);
+		return prepTime;
 	}
 	
 	function getWorkTime() {
@@ -63,6 +63,10 @@ module Properties {
 	
 	function setPresetNumber(presetNumber) {
 		App.getApp().setProperty(PROP_PRESET_NUMBER, presetNumber);
+	}
+	
+	function setPrepTime(prepTime) {
+		App.getApp().setProperty(PROP_PREP_TIME, prepTime);
 	}
 
 		
