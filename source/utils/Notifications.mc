@@ -8,10 +8,4 @@ module Notifications {
 		]);
 	}
 	
-	function notifyShort() {
-		Attention.vibrate([
-            new Attention.VibeProfile(100, 400)
-        ]);
-	}	
-	
 }

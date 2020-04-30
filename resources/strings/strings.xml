@@ -14,16 +14,15 @@
     <string id="WorkTimeLabel">Work duration</string>
     <string id="RestTimeLabel">Rest duration</string>
 
-
     <string id="DeletePresetLabel">Delete</string>
     <string id="EditPresetsLabel">Edit Presets</string>
     
-    <string id="TimeError">Duration cannot be less than 1 second</string>
+    <string id="MoreThan1Error">Has to be more than 1</string>
     
     <string id="preset1">Abs</string>
     <string id="preset2">Lats</string>
-    <string id="preset3">Custom</string>
-    <string id="preset4">-</string>
+    <string id="preset3">30:30</string>
+    <string id="preset4">Custom</string>
     <string id="preset5">-</string>
    
 </strings>

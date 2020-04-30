@@ -2,6 +2,7 @@ using Toybox.System;
 using Toybox.WatchUi;
 using Toybox.Timer;
 using Toybox.Graphics;
+using Toybox.Attention;
 
 class IntervalsView extends WatchUi.View {
 
@@ -24,6 +25,9 @@ class IntervalsView extends WatchUi.View {
 	private var mExercises = 0;
 	private var mPeriodTime = 0;
 	private var mTimer;
+	
+	private var mEndTimer;
+	private var mEndTimerCounter;
 	
 
     function initialize() {
@@ -90,8 +94,23 @@ class IntervalsView extends WatchUi.View {
     }
     
     function stopActivity() {
+    	mEndTimerCounter = 4;
+    	mEndTimer = new Timer.Timer();
+    	mEndTimer.start(method(:timerEndActivity), 200, true);
+    	
     	mTimer.stop();
-		closeActivity();    	
+		closeActivity(); 	
+    }
+    
+    function timerEndActivity() {
+    	if (mEndTimerCounter > 0) {
+	    	Attention.vibrate([
+				new Attention.VibeProfile(100, 100)
+			]);
+			mEndTimerCounter--;    	
+    	} else {
+    		mEndTimer.stop();
+    	}
     }
     
     function pauseActivity() {
