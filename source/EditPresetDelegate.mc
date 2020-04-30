@@ -14,12 +14,9 @@ class EditPresetDelegate extends WatchUi.MenuInputDelegate {
         switch (item) {
         	case :exercises:
         		var label = Rez.Strings.ExercisesLabel;
-        		System.println(label);
-				/*
 				var value = Properties.getExercisesForPreset(mId);
 				var delegate = new NumberPickerDelegate(:exercises, mId);
 				WatchUi.pushView(new NumberPicker(label, value, 1, 99), delegate, WatchUi.SLIDE_IMMEDIATE);
-				*/
         		break;
         	case :workTime:
         		label = Rez.Strings.WorkTimeLabel;
@@ -33,12 +30,20 @@ class EditPresetDelegate extends WatchUi.MenuInputDelegate {
         		delegate = new NumberPickerDelegate(:restTime, mId);
         		WatchUi.pushView(new NumberPicker(label, value, 1, 99), delegate, WatchUi.SLIDE_IMMEDIATE);
         		break;
- 			case :delete:
-        		System.println("delete");
+ 			case :remove:
+        		System.println("remove");
+        		
+				var message = "Continue?";
+				var dialog = new WatchUi.Confirmation(message);
+				WatchUi.pushView(
+				    dialog,
+				    new ConfirmationDelegate(),
+				    WatchUi.SLIDE_IMMEDIATE
+);        		
+        		
         		break;
         }
         return true;
-//		WatchUi.pushView(new EditPresetMenu(title, id), null, WatchUi.SLIDE_UP);
 	}
 	        
 }

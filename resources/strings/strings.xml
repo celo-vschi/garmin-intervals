@@ -1,7 +1,7 @@
 <strings>
-    <string id="AppName">intervals-app</string>
-	<string id="no_value">--</string>
+    <string id="AppName">Intervals</string>
 
+	<string id="no_value">--</string>
     <string id="press_start">Press 'Start'</string>
     <string id="get_ready">Get ready ...</string>
     <string id="work">WORK</string>
@@ -15,7 +15,7 @@
     <string id="WorkTimeLabel">Work duration</string>
     <string id="RestTimeLabel">Rest duration</string>
 
-    <string id="DeletePresetLabel">Delete</string>
+    <string id="RemovePresetLabel">Remove</string>
     <string id="EditPresetsLabel">Edit Presets</string>
     
     <string id="MoreThan1Error">Has to be more than 1</string>

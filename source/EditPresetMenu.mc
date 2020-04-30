@@ -15,8 +15,8 @@ class EditPresetMenu extends WatchUi.Menu {
 		label = WatchUi.loadResource(Rez.Strings.RestTimeLabel);
 		addItem(label, :restTime);
 		
-		label = WatchUi.loadResource(Rez.Strings.DeletePresetLabel);
-		addItem(label, :delete);
+		label = WatchUi.loadResource(Rez.Strings.RemovePresetLabel);
+		addItem(label, :remove);
 	}
 
 }
