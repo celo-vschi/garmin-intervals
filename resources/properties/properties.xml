@@ -3,22 +3,27 @@
 	<property id="prepTime" type="number">3</property>
 	
 	<!-- presets -->
+	<property id="preset1" type="string">"@Strings.preset1"</property>
 	<property id="workTime1" type="number">25</property>
 	<property id="restTime1" type="number">5</property>
 	<property id="exercises1" type="number">12</property>
 	
+	<property id="preset2" type="string">@Strings.preset2</property>
 	<property id="workTime2" type="number">5</property>
 	<property id="restTime2" type="number">7</property>
 	<property id="exercises2" type="number">8</property>
 	
+	<property id="preset3" type="string">@Strings.preset3</property>
 	<property id="workTime3" type="number">5</property>
 	<property id="restTime3" type="number">7</property>
 	<property id="exercises3" type="number">8</property>
 	
+	<property id="preset4" type="string">@Strings.preset4</property>
 	<property id="workTime4" type="number">5</property>
 	<property id="restTime4" type="number">7</property>
 	<property id="exercises4" type="number">8</property>
 	
+	<property id="preset5" type="string">@Strings.preset5</property>
 	<property id="workTime5" type="number">5</property>
 	<property id="restTime5" type="number">7</property>
 	<property id="exercises5" type="number">8</property>

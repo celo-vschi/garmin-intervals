@@ -1,7 +1,7 @@
-using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
 using Toybox.System;
 
-class SelectPresetMenu extends WatchUi.Menu {
+class SelectPresetMenu extends Ui.Menu {
 
 	const EMPTY = "-";
 	
@@ -14,26 +14,24 @@ class SelectPresetMenu extends WatchUi.Menu {
 		for (var i=1; i<=5; i++) {
 			switch(i) {
 				case 1: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset1);
+					presetName = Ui.loadResource(Rez.Strings.preset1);
 					label = :preset1;
 					break;
 				case 2:
-					presetName = WatchUi.loadResource(Rez.Strings.preset2);
+					presetName = Ui.loadResource(Rez.Strings.preset2);
 					label = :preset2;
 					break;
 				case 3: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset3);
+					presetName = Ui.loadResource(Rez.Strings.preset3);
 					label = :preset3;
 					break;
 				case 4:
-					presetName = WatchUi.loadResource(Rez.Strings.preset4);
+					presetName = Ui.loadResource(Rez.Strings.preset4);
 					label = :preset4;
 					break;
 				case 5: 
-					presetName = WatchUi.loadResource(Rez.Strings.preset5);
+					presetName = Ui.loadResource(Rez.Strings.preset5);
 					label = :preset5;
-					break;
-				default: presetName = null;
 					break;
 			}
 			
@@ -47,5 +45,7 @@ class SelectPresetMenu extends WatchUi.Menu {
 		}
 		
 	}
+	
+	
 
 }
