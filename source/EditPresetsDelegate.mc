@@ -21,6 +21,9 @@ class EditPresetsDelegate extends Ui.MenuInputDelegate {
     		title = "Preset#" + id;
     		
     		Properties.setPresetName(id, title);
+    		Ui.popView(WatchUi.SLIDE_IMMEDIATE);
+    		Ui.pushView(new SelectPresetMenu(true), new EditPresetsDelegate(), WatchUi.SLIDE_IMMEDIATE);
+    		
 		}
 		
 		Ui.pushView(new EditPresetMenu(title, id), new EditPresetDelegate(id), Ui.SLIDE_UP);
