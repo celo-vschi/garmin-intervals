@@ -3,7 +3,7 @@
 	<property id="prepTime" type="number">3</property>
 	
 	<!-- presets -->
-	<property id="preset1" type="string">"@Strings.preset1"</property>
+	<property id="preset1" type="string">@Strings.preset1</property>
 	<property id="workTime1" type="number">25</property>
 	<property id="restTime1" type="number">5</property>
 	<property id="exercises1" type="number">12</property>
