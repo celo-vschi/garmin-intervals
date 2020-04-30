@@ -21,10 +21,4 @@
     <string id="MoreThan1Error">Has to be more than 1</string>
     <string id="EmptyError">Has to have a value</string>
     
-    <string id="preset1">Abs</string>
-    <string id="preset2">Lats</string>
-    <string id="preset3">30:30</string>
-    <string id="preset4">-</string>
-    <string id="preset5">-</string>
-   
 </strings>

@@ -14,9 +14,12 @@ class EditPresetDelegate extends WatchUi.MenuInputDelegate {
         switch (item) {
         	case :exercises:
         		var label = Rez.Strings.ExercisesLabel;
+        		System.println(label);
+				/*
 				var value = Properties.getExercisesForPreset(mId);
 				var delegate = new NumberPickerDelegate(:exercises, mId);
 				WatchUi.pushView(new NumberPicker(label, value, 1, 99), delegate, WatchUi.SLIDE_IMMEDIATE);
+				*/
         		break;
         	case :workTime:
         		label = Rez.Strings.WorkTimeLabel;

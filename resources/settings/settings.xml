@@ -1,20 +1,22 @@
 <settings>
 
+	<!-- 
 	<setting propertyKey="@Properties.presetNumber" title="@Strings.PresetNumberLabel">
 		<settingConfig type="list" required="true">
-			<listEntry value="1">@Strings.preset1</listEntry>
-			<listEntry value="2">@Strings.preset2</listEntry>
-			<listEntry value="3">@Strings.preset3</listEntry>
-			<listEntry value="4">@Strings.preset4</listEntry>
-			<listEntry value="5">@Strings.preset5</listEntry>
+			<listEntry value="1">@Properties.presetName1</listEntry>
+			<listEntry value="2">@Properties.presetName2</listEntry>
+			<listEntry value="3">@Properties.presetName3</listEntry>
+			<listEntry value="4">@Properties.presetName4</listEntry>
+			<listEntry value="5">@Properties.presetName5</listEntry>
 		</settingConfig>
 	</setting>
+	 -->
 	
 	<setting propertyKey="@Properties.prepTime" title="@Strings.PrepTimeLabel">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
-	<setting propertyKey="@Properties.preset1" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
 	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel">
@@ -27,7 +29,7 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
-	<setting propertyKey="@Properties.preset2" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName2" title="@Strings.PresetNameLabel">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
 	<setting propertyKey="@Properties.workTime2" title="@Strings.WorkTimeLabel">
@@ -40,7 +42,7 @@
 		<settingConfig type="numeric" min="2" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
-	<setting propertyKey="@Properties.preset3" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName3" title="@Strings.PresetNameLabel">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
 	<setting propertyKey="@Properties.workTime3" title="@Strings.WorkTimeLabel">
@@ -53,7 +55,7 @@
 		<settingConfig type="numeric" min="3" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
-	<setting propertyKey="@Properties.preset4" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName4" title="@Strings.PresetNameLabel">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
 	<setting propertyKey="@Properties.workTime4" title="@Strings.WorkTimeLabel">
@@ -67,7 +69,7 @@
 	</setting>
 	
 	
-	<setting propertyKey="@Properties.preset5" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName5" title="@Strings.PresetNameLabel">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
 	<setting propertyKey="@Properties.workTime5" title="@Strings.WorkTimeLabel">
