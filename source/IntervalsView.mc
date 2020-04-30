@@ -5,24 +5,25 @@ using Toybox.Graphics;
 
 class IntervalsView extends WatchUi.View {
 
+	// Drawable ids
 	const DRAWABLE_PRESET = "PresetName";
 	const DRAWABLE_INSTRUCTIONS = "InstructionsLabel";
 	const DRAWABLE_TIMER = "TimerLabel";
 	const DRAWABLE_EXERCISE = "ExerciseLabel";
 	
-	private var PROP_WORK_TIME;
-	private var PROP_REST_TIME;
-	private var PROP_EXERCISES;
-	private var PROP_PREP_TIME;
+	// Properties
+	private var prop_workTime;
+	private var prop_restTime;
+	private var prop_exercises;
+	private var prop_prepTime;
 	
-	private var RUNNING = false;
-	private var RESTING = false;
-	private var PAUSED = false;
-	
-	private var EXERCISES = 0;
-	private var PERIOD_TIME = 0;
-	
-	private var TIMER;
+	private var mRunning = false;
+	private var mResting = false;
+	private var mPaused = false;
+
+	private var mExercises = 0;
+	private var mPeriodTime = 0;
+	private var mTimer;
 	
 
     function initialize() {
@@ -76,56 +77,56 @@ class IntervalsView extends WatchUi.View {
     	loadProperties();
     	
     	// init vars
-    	RUNNING = true;
-    	RESTING = true;
-    	EXERCISES = 0;
-    	PERIOD_TIME = 0;
+    	mRunning = true;
+    	mResting = true;
+    	mExercises = 0;
+    	mPeriodTime = 0;
     	
     	// start timer
-    	TIMER = new Timer.Timer();
-    	TIMER.start(method(:timerAction), 1000, true);
+    	mTimer = new Timer.Timer();
+    	mTimer.start(method(:timerAction), 1000, true);
     	
     	WatchUi.requestUpdate();
     }
     
     function stopActivity() {
-    	TIMER.stop();
+    	mTimer.stop();
 		closeActivity();    	
     }
     
     function pauseActivity() {
-    	TIMER.stop();
-    	PAUSED = true;
+    	mTimer.stop();
+    	mPaused = true;
 
 		WatchUi.requestUpdate();
     }
     
     function resumeActivity() {
-    	PAUSED = false;
-    	TIMER.start(method(:timerAction), 1000, true);
+    	mPaused = false;
+    	mTimer.start(method(:timerAction), 1000, true);
     	
     	WatchUi.requestUpdate();
     }
     
     function closeActivity() {
-    	RUNNING = false;
-    	RESTING = false;
-    	EXERCISES = 0;
-    	PERIOD_TIME = 0;
+    	mRunning = false;
+    	mResting = false;
+    	mExercises = 0;
+    	mPeriodTime = 0;
     	
     	WatchUi.requestUpdate();
     }
     
     function timerAction() {
-    	if (RUNNING) {
-    		PERIOD_TIME++;
+    	if (mRunning) {
+    		mPeriodTime++;
 			
-			if (RESTING) {
-				var delay = EXERCISES < 1 ? PROP_PREP_TIME : PROP_REST_TIME;
-				if (PERIOD_TIME >= delay) {
+			if (mResting) {
+				var delay = mExercises < 1 ? prop_prepTime : prop_restTime;
+				if (mPeriodTime >= delay) {
 					switchToWorkout();
 				}
-			} else if (PERIOD_TIME >= PROP_WORK_TIME) {
+			} else if (mPeriodTime >= prop_workTime) {
 				switchToRest();
 			}
     	}
@@ -133,16 +134,16 @@ class IntervalsView extends WatchUi.View {
     }
     
     function switchToWorkout() {
-    	EXERCISES++;
-    	PERIOD_TIME = 0;
-    	RESTING = false;
+    	mExercises++;
+    	mPeriodTime = 0;
+    	mResting = false;
     	
     	Notifications.notifyEnd();
     }
     
     function switchToRest() {
-    	PERIOD_TIME = 0;
-    	RESTING = true;
+    	mPeriodTime = 0;
+    	mResting = true;
     	
     	Notifications.notifyEnd();
 
@@ -152,94 +153,47 @@ class IntervalsView extends WatchUi.View {
     }
     
     function drawInstructions(drawable) {
-    	var text = "";
-    	var color;
-
-    	if (RUNNING) {
-    		if (RESTING) {
-    			if (EXERCISES < 1) {
-    				text = WatchUi.loadResource(Rez.Strings.get_ready);
-    				color = Graphics.COLOR_YELLOW;
-    			} else {
-    				text = WatchUi.loadResource(Rez.Strings.rest);
-    				color = Graphics.COLOR_GREEN;
-				} 
-    		} else {
-    			text = WatchUi.loadResource(Rez.Strings.work);
-    			color = Graphics.COLOR_RED;
-			}
-			
-			if (PAUSED) {
-				text = WatchUi.loadResource(Rez.Strings.paused);
-				color = Graphics.COLOR_YELLOW;
-			}
-			
-    	} else {
-    		text = WatchUi.loadResource(Rez.Strings.press_start);
-    		color = Graphics.COLOR_WHITE;
-    	}
-    	
-    	drawable.setText(text);
-    	drawable.setColor(color);
+    	var values = LabelUtils.getInstructionsLabel(mRunning, mResting, mExercises, mPaused);
+    	drawable.setText(values.get(:text));
+    	drawable.setColor(values.get(:color));
     }
     
     function drawTimer(drawable) {
-		var text;
-	
-		if (RUNNING) {
-			var delay = EXERCISES < 1 ? PROP_PREP_TIME : PROP_REST_TIME;
-			var seconds = (RESTING ? delay : PROP_WORK_TIME) - PERIOD_TIME;
-			text = Utils.formatTimerLabel(seconds);	
-		} else {
-			text = WatchUi.loadResource(Rez.Strings.no_value);
-		}
-		
+		var text = LabelUtils.getTimerLabel(mRunning, mResting, mExercises, mPeriodTime,
+			prop_prepTime, prop_restTime, prop_workTime);
 		drawable.setText(text);	
     }
     
     function drawExercise(drawable) {
-    	var text;
-    	
-    	if (RUNNING && EXERCISES > 0) {
-    		text = Utils.formatExerciseLabel(EXERCISES, PROP_EXERCISES);
-    	} else {
-    		text = WatchUi.loadResource(Rez.Strings.no_value);
-    	}
-    	
+    	var text = LabelUtils.getExerciseLabel(mRunning, mExercises, prop_exercises);
     	drawable.setText(text);
     }
     
     function isRunning() {
-    	return RUNNING;
+    	return mRunning;
 	}
 	
 	function isWorking() {
-		return RUNNING && !RESTING;
+		return mRunning && !mResting;
 	}
 	
 	function isResting() {
-		return RUNNING && RESTING;
+		return mRunning && mResting;
 	}
 	
 	function isFinished() {
-		return !RUNNING || EXERCISES >= PROP_EXERCISES;
+		return !mRunning || mExercises >= prop_exercises;
 	}
 	
 	function isPaused() {
-		return RUNNING && PAUSED;
+		return mRunning && mPaused;
 	}
     
     function loadProperties() {
-    	PROP_PREP_TIME = Properties.getPrepTime();
-    	PROP_EXERCISES = Properties.getExercises();
-    	PROP_WORK_TIME = Properties.getWorkTime();
-    	PROP_REST_TIME = Properties.getRestTime();
-		/*
-    	System.println("Prep time: " + PROP_PREP_TIME);
-    	System.println("Exercises: " + PROP_EXERCISES);
-    	System.println("Work time: " + PROP_WORK_TIME);
-    	System.println("Rest time: " + PROP_REST_TIME);
-    	*/
+    	prop_prepTime = Properties.getPrepTime();
+    	prop_exercises = Properties.getExercises();
+    	prop_workTime = Properties.getWorkTime();
+    	prop_restTime = Properties.getRestTime();
     }
 
 }
