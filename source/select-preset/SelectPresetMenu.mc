@@ -9,14 +9,16 @@ class SelectPresetMenu extends Ui.Menu {
 		Menu.initialize();
 		setTitle("Presets");
 		
+		var presets = 0;
 		for (var i=1; i<=5; i++) {
 			var presetName = Properties.getPresetNameForPreset(i);
 			if (!EMPTY.equals(presetName)) {
 				addItem(presetName, i);
+				presets++;
 			}
 		}
 		
-		if (edit) {
+		if (edit && presets < 5) {
 			addItem("Add New", :addNew);
 		}
 		
