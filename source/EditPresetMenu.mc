@@ -1,22 +1,42 @@
-using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.System;
 
-class EditPresetMenu extends WatchUi.Menu {
+class EditPresetMenu extends Ui.Menu {
+
+	const EMPTY = "-";
+	private var mId;
 
 	function initialize(title, id) {
 		Menu.initialize();
+		mId = id;
 		setTitle(title);
 
-        var label = WatchUi.loadResource(Rez.Strings.ExercisesLabel);		
+        var label = Ui.loadResource(Rez.Strings.ExercisesLabel);		
 		addItem(label, :exercises);
 		
-		label = WatchUi.loadResource(Rez.Strings.WorkTimeLabel);
+		label = Ui.loadResource(Rez.Strings.WorkTimeLabel);
 		addItem(label, :workTime);
 		
-		label = WatchUi.loadResource(Rez.Strings.RestTimeLabel);
+		label = Ui.loadResource(Rez.Strings.RestTimeLabel);
 		addItem(label, :restTime);
 		
-		label = WatchUi.loadResource(Rez.Strings.RemovePresetLabel);
-		addItem(label, :remove);
+		if (!isLastPreset()) {
+			label = Ui.loadResource(Rez.Strings.RemovePresetLabel);
+			addItem(label, :remove);
+		}
 	}
+	
+	function isLastPreset() {
+		var count = 0;
+		for (var i=1; i<=5; i++) {
+			var presetName = Properties.getPresetNameById(i);
+			if (!EMPTY.equals(presetName)) {
+				count++;
+			}
+		}
+		
+		return count == 1;
+	}	
+
 
 }
