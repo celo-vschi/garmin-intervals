@@ -15,7 +15,7 @@ class EditPresetsDelegate extends Ui.MenuInputDelegate {
 		
 		if (item != :addNew) {
 			id = item;
-			title = Properties.getPresetNameById(item);
+			title = Properties.getPresetNameForPreset(item);
 		} else {
     		id = findFirstNotAddedPreset();
     		title = "Preset#" + id;
@@ -31,7 +31,7 @@ class EditPresetsDelegate extends Ui.MenuInputDelegate {
 	
 	function findFirstNotAddedPreset() {
 		for (var i=1; i<=5; i++) {
-			var presetName = Properties.getPresetNameById(i);
+			var presetName = Properties.getPresetNameForPreset(i);
 			if (EMPTY.equals(presetName)) {
 				return i;
 			}

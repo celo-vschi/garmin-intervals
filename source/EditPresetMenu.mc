@@ -29,7 +29,7 @@ class EditPresetMenu extends Ui.Menu {
 	function isLastPreset() {
 		var count = 0;
 		for (var i=1; i<=5; i++) {
-			var presetName = Properties.getPresetNameById(i);
+			var presetName = Properties.getPresetNameForPreset(i);
 			if (!EMPTY.equals(presetName)) {
 				count++;
 			}

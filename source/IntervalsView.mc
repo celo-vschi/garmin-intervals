@@ -47,7 +47,7 @@ class IntervalsView extends WatchUi.View {
 
     // Update the view
     function onUpdate(dc) {
-    	var presetName = Properties.getPresetName();
+    	var presetName = Properties.getCurrentPresetName();
 
     	// draw the preset name text
     	var drawable = View.findDrawableById(DRAWABLE_PRESET);
@@ -209,10 +209,10 @@ class IntervalsView extends WatchUi.View {
 	}
     
     function loadProperties() {
-    	prop_prepTime = Properties.getPrepTime();
-    	prop_exercises = Properties.getExercises();
-    	prop_workTime = Properties.getWorkTime();
-    	prop_restTime = Properties.getRestTime();
+    	prop_prepTime = Properties.getCurrentPrepTime();
+    	prop_exercises = Properties.getCurrentExercises();
+    	prop_workTime = Properties.getCurrentWorkTime();
+    	prop_restTime = Properties.getCurrentRestTime();
     }
 
 }

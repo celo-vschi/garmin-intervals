@@ -10,7 +10,7 @@ class SelectPresetMenu extends Ui.Menu {
 		setTitle("Presets");
 		
 		for (var i=1; i<=5; i++) {
-			var presetName = Properties.getPresetNameById(i);
+			var presetName = Properties.getPresetNameForPreset(i);
 			if (!EMPTY.equals(presetName)) {
 				addItem(presetName, i);
 			}
