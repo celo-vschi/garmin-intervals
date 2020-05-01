@@ -13,9 +13,26 @@ class DeletePresetConfirmationDelegate extends Ui.ConfirmationDelegate {
 	
 	    function onResponse(response) {
 	        if (response == Ui.CONFIRM_YES) {
-				var usedPresetName = Properties.getCurrentPresetName();	        
-				System.print(usedPresetName);
-//	            Properties.setPresetName(mId, EMPTY);
+	            Properties.setPresetName(mId, EMPTY);
+				
+				// replace used preset if needed
+				var usedPresetNumber = Properties.getCurrentPresetNumber();	        
+				if (usedPresetNumber == mId) {
+					var newPresetNumber = getFirstAvailablePresetNumber();
+					if (newPresetNumber != 0) {
+						Properties.setPreset(newPresetNumber);
+					}
+				}
 	        }
+	    }
+	    
+	    function getFirstAvailablePresetNumber() {
+	    	for (var i=1; i<=5; i++) {
+	    		var presetName = Properties.getPresetNameForPreset(i);
+	    		if (!EMPTY.equals(presetName)) {
+	    			return i;
+	    		}
+	    	}
+	    	return 0;
 	    }
 }

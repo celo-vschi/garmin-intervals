@@ -13,6 +13,11 @@ module Properties {
 	const PROP_PREP_TIME = "prepTime";
 
 	// getters - current preset
+	function getCurrentPresetNumber() {
+		var app = App.getApp();
+		var presetNumber = getCurrentPresetNumberInternal(app);
+		return presetNumber;
+	}
 	function getCurrentPresetNumberInternal(app) {
 		var presetNumber = app.getProperty(PROP_PRESET_NUMBER);
 		return presetNumber;

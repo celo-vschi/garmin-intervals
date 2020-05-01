@@ -34,7 +34,6 @@ class NumberPickerDelegate extends WatchUi.PickerDelegate {
 				break;
 		}			
 				
-		System.println("setting " + mSetting.toString() + " for preset#" + mId + " to " + value);	
 		WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
     }
 
