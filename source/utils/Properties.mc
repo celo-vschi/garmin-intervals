@@ -13,7 +13,7 @@ module Properties {
 	const PROP_PREP_TIME = "prepTime";
 
 	// getters - current preset
-	function getPresetNumberInternal(app) {
+	function getCurrentPresetNumberInternal(app) {
 		var presetNumber = app.getProperty(PROP_PRESET_NUMBER);
 		return presetNumber;
 	}
@@ -21,25 +21,9 @@ module Properties {
 	function getCurrentPresetName() {
 		var app = App.getApp();
 		
-		var presetNumber = getPresetNumberInternal(app);
+		var presetNumber = getCurrentPresetNumberInternal(app);
 		var presetName = getPresetNameForPreset(presetNumber);
 		return presetName;
-	}
-	
-	function getCurrentWorkTime() {
-		var app = App.getApp();
-
-		var preset = getPresetNumberInternal(app);
-		var workTime = app.getProperty(PROP_WORK_TIME + preset);
-		return workTime;
-	}
-	
-	function getCurrentRestTime() {
-		var app = App.getApp();
-		
-		var preset = getPresetNumberInternal(app);
-		var restTime = app.getProperty(PROP_REST_TIME + preset);
-		return restTime;
 	}
 	
 	function getCurrentPrepTime() {
@@ -49,19 +33,30 @@ module Properties {
 		return prepTime;
 	}
 	
+	function getCurrentWorkTime() {
+		var app = App.getApp();
+
+		var presetNumber = getCurrentPresetNumberInternal(app);
+		var workTime = app.getProperty(PROP_WORK_TIME + presetNumber);
+		return workTime;
+	}
+	
+	function getCurrentRestTime() {
+		var app = App.getApp();
+		
+		var presetNumber = getCurrentPresetNumberInternal(app);
+		var restTime = app.getProperty(PROP_REST_TIME + presetNumber);
+		return restTime;
+	}
+	
 	function getCurrentExercises() {
 		var app = App.getApp();
 			
-		var preset = getPresetNumberInternal(app);
-		var exercises = app.getProperty(PROP_EXERCISES + preset);
+		var presetNumber = getCurrentPresetNumberInternal(app);
+		var exercises = app.getProperty(PROP_EXERCISES + presetNumber);
 		return exercises;
 	}
 	
-	// setters - current preset
-	function setPresetNumber(presetNumber) {
-		App.getApp().setProperty(PROP_PRESET_NUMBER, presetNumber);
-	}	
-
 	// getters - specified preset
 	function getExercisesForPreset(preset) {
 		var app = App.getApp();
@@ -93,16 +88,16 @@ module Properties {
 		App.getApp().setProperty(PROP_PREP_TIME, prepTime);
 	}
 	
-	function setExercises(id, value) {
-		App.getApp().setProperty(PROP_EXERCISES + id, value);
+	function setExercises(id, exercises) {
+		App.getApp().setProperty(PROP_EXERCISES + id, exercises);
 	}
 	
-	function setWorkTime(id, value) {
-		App.getApp().setProperty(PROP_WORK_TIME + id, value);
+	function setWorkTime(id, workTime) {
+		App.getApp().setProperty(PROP_WORK_TIME + id, workTime);
 	}
 	
-	function setRestTime(id, value) {
-		App.getApp().setProperty(PROP_REST_TIME + id, value);
+	function setRestTime(id, restTime) {
+		App.getApp().setProperty(PROP_REST_TIME + id, restTime);
 	}		
 	
 	// others
@@ -110,6 +105,10 @@ module Properties {
 		var app = App.getApp();
 		var presetName = app.getProperty(PROP_PRESET_NAME + id);
 		return presetName;
+	}
+	
+	function setPreset(presetNumber) {
+		App.getApp().setProperty(PROP_PRESET_NUMBER, presetNumber);
 	}
 		
 }
