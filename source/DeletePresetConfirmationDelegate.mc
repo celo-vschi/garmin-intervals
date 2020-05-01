@@ -23,6 +23,11 @@ class DeletePresetConfirmationDelegate extends Ui.ConfirmationDelegate {
 						Properties.setPreset(newPresetNumber);
 					}
 				}
+				
+				// back to first screen
+				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
+				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
+				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
 	        }
 	    }
 	    

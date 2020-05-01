@@ -31,10 +31,6 @@ class EditPresetDelegate extends Ui.MenuInputDelegate {
         		Ui.pushView(new NumberPicker(label, value, 1, 99), delegate, Ui.SLIDE_IMMEDIATE);
         		break;
  			case :remove:
-				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
-				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
-				Ui.popView(WatchUi.SLIDE_IMMEDIATE);
-				
 				var dialog = new Ui.Confirmation("Remove?");
 				Ui.pushView(
 					dialog,
