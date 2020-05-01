@@ -20,7 +20,7 @@ class SettingsDelegate extends WatchUi.MenuInputDelegate {
 		}
 		
 		if (item == :editPresets) {
-			WatchUi.pushView(new SelectPresetMenu(true), new EditPresetsDelegate(), WatchUi.SLIDE_UP);
+			WatchUi.pushView(new SelectPresetMenu(true), new EditPresetsDelegate(), WatchUi.SLIDE_LEFT);
 		}
     
     }

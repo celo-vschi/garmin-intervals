@@ -32,7 +32,7 @@ class NumberPickerDelegate extends WatchUi.PickerDelegate {
 			case :restTime:
 				Properties.setRestTime(mId, value);
 				break;
-		}			
+		}
 				
 		WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
     }

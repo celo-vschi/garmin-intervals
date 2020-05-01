@@ -22,11 +22,11 @@ class EditPresetsDelegate extends Ui.MenuInputDelegate {
     		
     		Properties.setPresetName(id, title);
     		Ui.popView(WatchUi.SLIDE_IMMEDIATE);
-    		Ui.pushView(new SelectPresetMenu(true), new EditPresetsDelegate(), WatchUi.SLIDE_IMMEDIATE);
+    		Ui.pushView(new SelectPresetMenu(true), new EditPresetsDelegate(), WatchUi.SLIDE_LEFT);
     		
 		}
 		
-		Ui.pushView(new EditPresetMenu(title, id), new EditPresetDelegate(id), Ui.SLIDE_UP);
+		Ui.pushView(new EditPresetMenu(title, id), new EditPresetDelegate(id), Ui.SLIDE_LEFT);
 	}
 	
 	function findFirstNotAddedPreset() {
