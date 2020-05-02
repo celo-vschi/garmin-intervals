@@ -26,12 +26,11 @@ class IntervalsView extends WatchUi.View {
 	private var mPeriodTime = 0;
 	private var mTimer;
 	
-	private var mEndTimer;
-	private var mEndTimerCounter;
-	
+	private var mVibrations;
 
     function initialize() {
         View.initialize();
+        mVibrations = new Vibrations();
     }
 
     // Load your resources here
@@ -94,33 +93,20 @@ class IntervalsView extends WatchUi.View {
     }
     
     function stopActivity() {
-    	mEndTimerCounter = 4;
-    	mEndTimer = new Timer.Timer();
-    	mEndTimer.start(method(:timerEndActivity), 200, true);
-    	
     	mTimer.stop();
 		closeActivity(); 	
     }
     
-    function timerEndActivity() {
-    	if (mEndTimerCounter > 0) {
-	    	Attention.vibrate([
-				new Attention.VibeProfile(100, 100)
-			]);
-			mEndTimerCounter--;    	
-    	} else {
-    		mEndTimer.stop();
-    	}
-    }
-    
     function pauseActivity() {
-    	mTimer.stop();
+    	mVibrations.pause();
     	mPaused = true;
+    	mTimer.stop();
 
 		WatchUi.requestUpdate();
     }
     
     function resumeActivity() {
+    	mVibrations.pause();
     	mPaused = false;
     	mTimer.start(method(:timerAction), 1000, true);
     	
@@ -157,18 +143,19 @@ class IntervalsView extends WatchUi.View {
     	mPeriodTime = 0;
     	mResting = false;
     	
-    	Notifications.notifyEnd();
+    	mVibrations.work();
     }
     
     function switchToRest() {
     	mPeriodTime = 0;
     	mResting = true;
     	
-    	Notifications.notifyEnd();
-
 		if (isFinished()) {
+			mVibrations.finish();
 			stopActivity();
-		}    	
+		} else {
+			mVibrations.rest();
+		}
     }
     
     function drawInstructions(drawable) {
