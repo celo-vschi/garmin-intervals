@@ -94,6 +94,7 @@ class IntervalsView extends WatchUi.View {
     
     function stopActivity() {
     	mTimer.stop();
+    	mVibrations.finish();
 		closeActivity(); 	
     }
     
@@ -151,7 +152,6 @@ class IntervalsView extends WatchUi.View {
     	mResting = true;
     	
 		if (isFinished()) {
-			mVibrations.finish();
 			stopActivity();
 		} else {
 			mVibrations.rest();
