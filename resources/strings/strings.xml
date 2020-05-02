@@ -8,17 +8,48 @@
     <string id="rest">REST</string>
     <string id="paused">paused ...</string>
     
+    <string id="RemovePresetLabel">Remove</string>
+    <string id="EditPresetsLabel">Edit Presets</string>
+    <string id="MoreThan1Error">Has to be more than 1</string>
+    <string id="EmptyError">Has to have a value</string>
+
     <string id="PresetNumberLabel">Preset</string>
-    <string id="PresetNameLabel">Preset name</string>
-    <string id="ExercisesLabel">Exercises</string>
     <string id="PrepTimeLabel">Prep duration</string>
+    
+    <string id="ExercisesLabel">Exercises</string>
     <string id="WorkTimeLabel">Work duration</string>
     <string id="RestTimeLabel">Rest duration</string>
 
-    <string id="RemovePresetLabel">Remove</string>
-    <string id="EditPresetsLabel">Edit Presets</string>
+    <string id="preset1">Preset #1</string>
+    <string id="preset2">Preset #2</string>
+    <string id="preset3">Preset #3</string>
+    <string id="preset4">Preset #4</string>
+    <string id="preset5">Preset #5</string>
     
-    <string id="MoreThan1Error">Has to be more than 1</string>
-    <string id="EmptyError">Has to have a value</string>
     
+   	<string id="PresetNameLabel1">Preset #1 - Name</string>
+    <string id="ExercisesLabel1">Preset #1 - Exercises</string>
+    <string id="WorkTimeLabel1">Preset #1 - Work duration</string>
+    <string id="RestTimeLabel1">Preset #1 - Rest duration</string>
+    
+	<string id="PresetNameLabel2">Preset #2 - Name</string>
+    <string id="ExercisesLabel2">Preset #2 - Exercises</string>
+    <string id="WorkTimeLabel2">Preset #2 - Work duration</string>
+    <string id="RestTimeLabel2">Preset #2 - Rest duration</string>
+    
+    <string id="PresetNameLabel3">Preset #3 - Name</string>
+    <string id="ExercisesLabel3">Preset #3 - Exercises</string>
+    <string id="WorkTimeLabel3">Preset #3 - Work duration</string>
+    <string id="RestTimeLabel3">Preset #3 - Rest duration</string>
+    
+    <string id="PresetNameLabel4">Preset #4 - Name</string>
+    <string id="ExercisesLabel4">Preset #4 - Exercises</string>
+    <string id="WorkTimeLabel4">Preset #4 - Work duration</string>
+    <string id="RestTimeLabel4">Preset #4 - Rest duration</string>
+    
+    <string id="PresetNameLabel5">Preset #5 - Name</string>
+    <string id="ExercisesLabel5">Preset #5 - Exercises</string>
+    <string id="WorkTimeLabel5">Preset #5 - Work duration</string>
+    <string id="RestTimeLabel5">Preset #5 - Rest duration</string>
+        
 </strings>

@@ -1,84 +1,82 @@
 <settings>
 
-	<!-- 
 	<setting propertyKey="@Properties.presetNumber" title="@Strings.PresetNumberLabel">
 		<settingConfig type="list" required="true">
-			<listEntry value="1">@Properties.presetName1</listEntry>
-			<listEntry value="2">@Properties.presetName2</listEntry>
-			<listEntry value="3">@Properties.presetName3</listEntry>
-			<listEntry value="4">@Properties.presetName4</listEntry>
-			<listEntry value="5">@Properties.presetName5</listEntry>
+			<listEntry value="1">@Strings.preset1</listEntry>
+			<listEntry value="2">@Strings.preset2</listEntry>
+			<listEntry value="3">@Strings.preset3</listEntry>
+			<listEntry value="4">@Strings.preset4</listEntry>
+			<listEntry value="5">@Strings.preset5</listEntry>
 		</settingConfig>
 	</setting>
-	 -->
 	
 	<setting propertyKey="@Properties.prepTime" title="@Strings.PrepTimeLabel">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
-	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel1">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
-	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel">
+	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel1">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.restTime1" title="@Strings.RestTimeLabel">
+	<setting propertyKey="@Properties.restTime1" title="@Strings.RestTimeLabel1">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.exercises1" title="@Strings.ExercisesLabel">
+	<setting propertyKey="@Properties.exercises1" title="@Strings.ExercisesLabel1">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
-	<setting propertyKey="@Properties.presetName2" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName2" title="@Strings.PresetNameLabel2">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
-	<setting propertyKey="@Properties.workTime2" title="@Strings.WorkTimeLabel">
+	<setting propertyKey="@Properties.workTime2" title="@Strings.WorkTimeLabel2">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.restTime2" title="@Strings.RestTimeLabel">
+	<setting propertyKey="@Properties.restTime2" title="@Strings.RestTimeLabel2">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.exercises2" title="@Strings.ExercisesLabel">
+	<setting propertyKey="@Properties.exercises2" title="@Strings.ExercisesLabel2">
 		<settingConfig type="numeric" min="2" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
-	<setting propertyKey="@Properties.presetName3" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName3" title="@Strings.PresetNameLabel3">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
-	<setting propertyKey="@Properties.workTime3" title="@Strings.WorkTimeLabel">
+	<setting propertyKey="@Properties.workTime3" title="@Strings.WorkTimeLabel3">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.restTime3" title="@Strings.RestTimeLabel">
+	<setting propertyKey="@Properties.restTime3" title="@Strings.RestTimeLabel3">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.exercises3" title="@Strings.ExercisesLabel">
+	<setting propertyKey="@Properties.exercises3" title="@Strings.ExercisesLabel3">
 		<settingConfig type="numeric" min="3" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
-	<setting propertyKey="@Properties.presetName4" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName4" title="@Strings.PresetNameLabel4">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
-	<setting propertyKey="@Properties.workTime4" title="@Strings.WorkTimeLabel">
+	<setting propertyKey="@Properties.workTime4" title="@Strings.WorkTimeLabel4">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.restTime4" title="@Strings.RestTimeLabel">
+	<setting propertyKey="@Properties.restTime4" title="@Strings.RestTimeLabel4">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.exercises4" title="@Strings.ExercisesLabel">
+	<setting propertyKey="@Properties.exercises4" title="@Strings.ExercisesLabel4">
 		<settingConfig type="numeric" min="4" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
 	
-	<setting propertyKey="@Properties.presetName5" title="@Strings.PresetNameLabel">
+	<setting propertyKey="@Properties.presetName5" title="@Strings.PresetNameLabel5">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
-	<setting propertyKey="@Properties.workTime5" title="@Strings.WorkTimeLabel">
+	<setting propertyKey="@Properties.workTime5" title="@Strings.WorkTimeLabel5">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.restTime5" title="@Strings.RestTimeLabel">
+	<setting propertyKey="@Properties.restTime5" title="@Strings.RestTimeLabel5">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
-	<setting propertyKey="@Properties.exercises5" title="@Strings.ExercisesLabel">
+	<setting propertyKey="@Properties.exercises5" title="@Strings.ExercisesLabel5">
 		<settingConfig type="numeric" min="5" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
