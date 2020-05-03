@@ -86,11 +86,11 @@ class Vibrations {
 					new Attention.VibeProfile(mIntensities[mCounter-1], mVibrationDurations[mCounter-1])
 				]);
 			}
-			
 			mCounter--;
-			
 		} else {
-			mTimer.stop();
+			if (mTimer != null) {
+				mTimer.stop();
+			}
 		}
 	}
 	
