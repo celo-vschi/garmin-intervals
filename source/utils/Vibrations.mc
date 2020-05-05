@@ -66,22 +66,22 @@ class Vibrations {
 	function callback() {
 		if (mCounter > 0) {
 			if (mIntensities == null && mVibrationDurations == null) {
-				System.println("case 1");
+//				System.println("case 1");
 				Attention.vibrate([
 					new Attention.VibeProfile(100, mVibrationDuration)
 				]);
 			} else if (mIntensities == null && mVibrationDurations != null) {
-				System.println("case 2");
+//				System.println("case 2");
 				Attention.vibrate([
 					new Attention.VibeProfile(100, mVibrationDurations[mCounter-1])
 				]);
 			} else if (mIntensities != null && mVibrationDurations == null) {
-				System.println("case 3");
+//				System.println("case 3");
 				Attention.vibrate([
 					new Attention.VibeProfile(mIntensities[mCounter-1], mVibrationDuration)
 				]);
 			} else {
-				System.println("case 4");
+//				System.println("case 4");
 				Attention.vibrate([
 					new Attention.VibeProfile(mIntensities[mCounter-1], mVibrationDurations[mCounter-1])
 				]);
