@@ -7,6 +7,7 @@ module Properties {
 	const PROP_PRESET_NUMBER = "presetNumber";
 	const PROP_PRESET_NAME = "presetName";
 	
+	const PROP_ACTIVATED = "activated";
 	const PROP_WORK_TIME =  "workTime";
 	const PROP_REST_TIME = "restTime";
 	const PROP_EXERCISES = "exercises";
@@ -63,6 +64,13 @@ module Properties {
 	}
 	
 	// getters - specified preset
+	function isPresetActivated(preset) {
+		var app = App.getApp();
+		
+		var activated = app.getProperty(PROP_ACTIVATED + preset);
+		return activated;
+	}	
+	
 	function getExercisesForPreset(preset) {
 		var app = App.getApp();
 		

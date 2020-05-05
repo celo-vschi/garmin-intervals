@@ -4,26 +4,31 @@
 	
 	<!-- presets -->
 	<property id="presetName1" type="string">Abs</property>
+	<property id="activated1" type="boolean">true</property>
 	<property id="workTime1" type="number">25</property>
 	<property id="restTime1" type="number">5</property>
 	<property id="exercises1" type="number">12</property>
 	
 	<property id="presetName2" type="string">Lats</property>
+	<property id="activated2" type="boolean">true</property>
 	<property id="workTime2" type="number">5</property>
 	<property id="restTime2" type="number">7</property>
 	<property id="exercises2" type="number">8</property>
 	
 	<property id="presetName3" type="string">30:30</property>
+	<property id="activated3" type="boolean">true</property>
 	<property id="workTime3" type="number">30</property>
 	<property id="restTime3" type="number">30</property>
 	<property id="exercises3" type="number">12</property>
 	
-	<property id="presetName4" type="string">-</property>
+	<property id="presetName4" type="string">Preset #4</property>
+	<property id="activated4" type="boolean">true</property>
 	<property id="workTime4" type="number">4</property>
 	<property id="restTime4" type="number">4</property>
 	<property id="exercises4" type="number">4</property>
 	
-	<property id="presetName5" type="string">-</property>
+	<property id="presetName5" type="string">Preset #5</property>
+	<property id="activated5" type="boolean">true</property>
 	<property id="workTime5" type="number">5</property>
 	<property id="restTime5" type="number">5</property>
 	<property id="exercises5" type="number">5</property>

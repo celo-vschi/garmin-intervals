@@ -10,8 +10,11 @@ class EditPresetMenu extends Ui.Menu {
 		Menu.initialize();
 		mId = id;
 		setTitle(title);
+		
+		var label = Ui.loadResource(Rez.Strings.ActivatedLabel);
+		addItem(label, :activated);
 
-        var label = Ui.loadResource(Rez.Strings.ExercisesLabel);		
+        label = Ui.loadResource(Rez.Strings.ExercisesLabel);		
 		addItem(label, :exercises);
 		
 		label = Ui.loadResource(Rez.Strings.WorkTimeLabel);

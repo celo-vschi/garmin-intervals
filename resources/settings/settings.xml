@@ -17,6 +17,11 @@
 	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel1">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
+	
+	<setting propertyKey="@Properties.activated1" title="@Strings.ActivatedLabel1">
+		<settingConfig type="boolean" />
+	</setting>
+	
 	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel1">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>

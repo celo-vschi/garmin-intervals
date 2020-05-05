@@ -12,9 +12,14 @@ class EditPresetDelegate extends Ui.MenuInputDelegate {
 
     function onMenuItem(item) {
         switch (item) {
+        	case :activated:
+        		var label = Rez.Strings.ActivatedLabel;
+        		var value = Properties.isPresetActivated(mId);
+        		System.println(value);
+        		break;
         	case :exercises:
-        		var label = Rez.Strings.ExercisesLabel;
-				var value = Properties.getExercisesForPreset(mId);
+        		label = Rez.Strings.ExercisesLabel;
+				value = Properties.getExercisesForPreset(mId);
 				var delegate = new NumberPickerDelegate(:exercises, mId);
 				Ui.pushView(new NumberPicker(label, value, 1, 99), delegate, Ui.SLIDE_IMMEDIATE);
         		break;
