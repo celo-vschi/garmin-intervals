@@ -15,7 +15,7 @@ class SelectPresetMenu extends Ui.Menu {
 			if (!edit) {
 				var activated = Properties.isPresetActivated(i);
 				if (!activated) {
-					break;
+					continue;
 				} else {
 					presets++;
 				}				
