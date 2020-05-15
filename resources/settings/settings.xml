@@ -14,14 +14,12 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
-	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel1">
-		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
-	</setting>
-	
 	<setting propertyKey="@Properties.activated1" title="@Strings.ActivatedLabel1">
 		<settingConfig type="boolean" />
 	</setting>
-	
+	<setting propertyKey="@Properties.presetName1" title="@Strings.PresetNameLabel1">
+		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
+	</setting>
 	<setting propertyKey="@Properties.workTime1" title="@Strings.WorkTimeLabel1">
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
@@ -32,6 +30,9 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 
+	<setting propertyKey="@Properties.activated2" title="@Strings.ActivatedLabel2">
+		<settingConfig type="boolean" />
+	</setting>
 	<setting propertyKey="@Properties.presetName2" title="@Strings.PresetNameLabel2">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
@@ -42,9 +43,12 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	<setting propertyKey="@Properties.exercises2" title="@Strings.ExercisesLabel2">
-		<settingConfig type="numeric" min="2" errorMessage="@Strings.MoreThan1Error" />
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
+	<setting propertyKey="@Properties.activated3" title="@Strings.ActivatedLabel3">
+		<settingConfig type="boolean" />
+	</setting>
 	<setting propertyKey="@Properties.presetName3" title="@Strings.PresetNameLabel3">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
@@ -55,9 +59,12 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	<setting propertyKey="@Properties.exercises3" title="@Strings.ExercisesLabel3">
-		<settingConfig type="numeric" min="3" errorMessage="@Strings.MoreThan1Error" />
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
+	<setting propertyKey="@Properties.activated4" title="@Strings.ActivatedLabel4">
+		<settingConfig type="boolean" />
+	</setting>
 	<setting propertyKey="@Properties.presetName4" title="@Strings.PresetNameLabel4">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
@@ -68,10 +75,13 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	<setting propertyKey="@Properties.exercises4" title="@Strings.ExercisesLabel4">
-		<settingConfig type="numeric" min="4" errorMessage="@Strings.MoreThan1Error" />
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
 	
+	<setting propertyKey="@Properties.activated5" title="@Strings.ActivatedLabel5">
+		<settingConfig type="boolean" />
+	</setting>
 	<setting propertyKey="@Properties.presetName5" title="@Strings.PresetNameLabel5">
 		<settingConfig type="alphaNumeric" required="true" errorMessage="@Strings.EmptyError"/>
 	</setting>
@@ -82,7 +92,7 @@
 		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	<setting propertyKey="@Properties.exercises5" title="@Strings.ExercisesLabel5">
-		<settingConfig type="numeric" min="5" errorMessage="@Strings.MoreThan1Error" />
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.MoreThan1Error" />
 	</setting>
 	
 </settings>

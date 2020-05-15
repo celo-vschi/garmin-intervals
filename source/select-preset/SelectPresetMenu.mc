@@ -3,27 +3,30 @@ using Toybox.System;
 
 class SelectPresetMenu extends Ui.Menu {
 
-	const EMPTY = "-";
-	
 	function initialize(edit) {
 		Menu.initialize();
 		setTitle("Presets");
 		
+		// if !edit mode add only activated presets to the list 
+		var presetName;
 		var presets = 0;
 		for (var i=1; i<=5; i++) {
 			var presetName = Properties.getPresetNameForPreset(i);
-			if (!EMPTY.equals(presetName)) {
-				addItem(presetName, i);
-				presets++;
+			if (!edit) {
+				var activated = Properties.isPresetActivated(i);
+				if (!activated) {
+					break;
+				} else {
+					presets++;
+				}				
 			}
+		    addItem(presetName, i);
 		}
 		
-		if (edit && presets < 5) {
-			addItem("Add New", :addNew);
-		}
-		
+		// if there are no presets and !edit show a message
+	    if (presets == 0 && !edit) {
+	    	addItem("No presets are activated", :none);
+	    }		
 	}
 	
-	
-
 }

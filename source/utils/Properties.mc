@@ -92,7 +92,11 @@ module Properties {
 		return workTime;
 	}
 	
-	// setters - specified preset 
+	// setters - specified preset
+	function setPresetActivated(id, activated) {
+		App.getApp().setProperty(PROP_ACTIVATED + id, activated);	
+	}
+	
 	function setPresetName(id, name) {
 		App.getApp().setProperty(PROP_PRESET_NAME + id, name);
 	}
@@ -111,7 +115,7 @@ module Properties {
 	
 	function setRestTime(id, restTime) {
 		App.getApp().setProperty(PROP_REST_TIME + id, restTime);
-	}		
+	}
 	
 	// others
 	function getPresetNameForPreset(id) {

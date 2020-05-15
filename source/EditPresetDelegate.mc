@@ -12,10 +12,16 @@ class EditPresetDelegate extends Ui.MenuInputDelegate {
 
     function onMenuItem(item) {
         switch (item) {
-        	case :activated:
+        	case :activate:
         		var label = Rez.Strings.ActivatedLabel;
-        		var value = Properties.isPresetActivated(mId);
-        		System.println(value);
+        		var activated = Properties.isPresetActivated(mId);
+        		var title = activated ? "Deactivate?" : "Activate?";
+        		var dialog = new Ui.Confirmation(title);
+        		Ui.pushView(
+        			dialog,
+        			new ActivatePresetConfirmationDelegate(mId, activated),
+        			Ui.SLIDE_IMMEDIATE
+        		);
         		break;
         	case :exercises:
         		label = Rez.Strings.ExercisesLabel;
@@ -35,17 +41,8 @@ class EditPresetDelegate extends Ui.MenuInputDelegate {
         		delegate = new NumberPickerDelegate(:restTime, mId);
         		Ui.pushView(new NumberPicker(label, value, 1, 99), delegate, Ui.SLIDE_IMMEDIATE);
         		break;
- 			case :remove:
-				var dialog = new Ui.Confirmation("Remove?");
-				Ui.pushView(
-					dialog,
-				    new DeletePresetConfirmationDelegate(mId),
-				    Ui.SLIDE_IMMEDIATE
-				);
-				
-        		break;
         }
         return true;
 	}
-	        
+		        
 }

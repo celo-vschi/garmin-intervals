@@ -8,7 +8,6 @@
     <string id="rest">REST</string>
     <string id="paused">paused ...</string>
     
-    <string id="RemovePresetLabel">Remove</string>
     <string id="EditPresetsLabel">Edit Presets</string>
     <string id="MoreThan1Error">Has to be more than 1</string>
     <string id="EmptyError">Has to have a value</string>

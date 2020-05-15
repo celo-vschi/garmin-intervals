@@ -11,8 +11,9 @@ class EditPresetMenu extends Ui.Menu {
 		mId = id;
 		setTitle(title);
 		
-		var label = Ui.loadResource(Rez.Strings.ActivatedLabel);
-		addItem(label, :activated);
+		var activated = Properties.isPresetActivated(mId);
+		var label = activated ? "Activated" : "Deactivated";
+		addItem(label, :activate);
 
         label = Ui.loadResource(Rez.Strings.ExercisesLabel);		
 		addItem(label, :exercises);
@@ -22,24 +23,6 @@ class EditPresetMenu extends Ui.Menu {
 		
 		label = Ui.loadResource(Rez.Strings.RestTimeLabel);
 		addItem(label, :restTime);
-		
-		if (!isLastPreset()) {
-			label = Ui.loadResource(Rez.Strings.RemovePresetLabel);
-			addItem(label, :remove);
-		}
 	}
 	
-	function isLastPreset() {
-		var count = 0;
-		for (var i=1; i<=5; i++) {
-			var presetName = Properties.getPresetNameForPreset(i);
-			if (!EMPTY.equals(presetName)) {
-				count++;
-			}
-		}
-		
-		return count == 1;
-	}	
-
-
 }

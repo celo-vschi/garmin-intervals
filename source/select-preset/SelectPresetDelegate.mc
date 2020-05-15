@@ -8,7 +8,9 @@ class SelectPresetDelegate extends WatchUi.MenuInputDelegate {
     }
 
     function onMenuItem(item) {
-    	Properties.setPreset(item);
+    	if (item != :none) {
+	    	Properties.setPreset(item);
+    	}
 	}
 	        
 }
