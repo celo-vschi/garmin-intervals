@@ -25,7 +25,7 @@ class EditPresetDelegate extends Ui.MenuInputDelegate {
         		break;
         	case :exercises:
         		label = Rez.Strings.ExercisesLabel;
-				value = Properties.getExercisesForPreset(mId);
+				var value = Properties.getExercisesForPreset(mId);
 				var delegate = new NumberPickerDelegate(:exercises, mId);
 				Ui.pushView(new NumberPicker(label, value, 1, 99), delegate, Ui.SLIDE_IMMEDIATE);
         		break;
