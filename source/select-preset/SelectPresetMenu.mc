@@ -11,7 +11,7 @@ class SelectPresetMenu extends Ui.Menu {
 		var presetName;
 		var presets = 0;
 		for (var i=1; i<=5; i++) {
-			var presetName = Properties.getPresetNameForPreset(i);
+			presetName = Properties.getPresetNameForPreset(i);
 			if (!edit) {
 				var activated = Properties.isPresetActivated(i);
 				if (!activated) {
